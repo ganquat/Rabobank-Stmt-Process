@@ -1,0 +1,8 @@
+com\rabobank\statement\model\CustStmtList.class
+com\rabobank\statement\SpringBootWebApplication.class
+com\rabobank\statement\controller\GlobalExceptionHandler.class
+com\rabobank\statement\model\CustStmtModel.class
+com\rabobank\statement\processor\CustStmtProcessor.class
+com\rabobank\statement\controller\UploadController.class
+com\rabobank\statement\constants\CustStmtConstant.class
+com\rabobank\statement\service\CustStmtService.class

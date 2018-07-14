@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div th:unless="${message}">
+ <h3>Invalid transactions in MT940 file</h3>
+
+<table>
+    <tr>
+        <th>Reference No</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="custStmt: ${session.custStmtList}">
+       <div th:if="${custStmt.failedRecord}">
+        <td th:text="${custStmt.refernceNo}"></td>
+        <td th:text="${custStmt.description}"></td>
+       </div>
+    </tr>
+</table>
+
+</div>
+
+</body>
+</html>
