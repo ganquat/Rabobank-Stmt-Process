@@ -16,7 +16,7 @@ command line using maven command. The application uses inbuilt spring boot tomca
 Import the project in Intellij IDEA ide. Goto Source directory -> Right click SpringBootWebApplication class file and run it.
 
 
-## Run using Intellij IDEA ##
+## Run using Maven commandline ##
 
 Goto project directory in the command promt and run the following commands
 
