@@ -1,0 +1,3 @@
+com\robobank\statement\processor\CSVStmtProcessorTest.class
+com\robobank\statement\validator\CustStmtValidatorTest.class
+com\robobank\statement\processor\XMLStmtProcessorTest.class
