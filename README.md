@@ -22,4 +22,4 @@ Goto project directory in the command promt and run the following commands
 
 __mvn clean package__
 
-__java -jar target/spring-boot-file-upload-1.0.jar__
+__java -jar target/Rabobank-Stmt-Process-1.0.jar__
