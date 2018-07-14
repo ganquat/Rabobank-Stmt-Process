@@ -7,24 +7,15 @@ import org.springframework.boot.context.embedded.tomcat.TomcatConnectorCustomize
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @SpringBootApplication
 public class SpringBootWebApplication {
 
-
-
     public static void main(String[] args) throws Exception {
-
         SpringApplication.run(SpringBootWebApplication.class, args);
-
     }
-
 
     @Bean
     public TomcatEmbeddedServletContainerFactory tomcatEmbedded() {
-
         TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
 
         tomcat.addConnectorCustomizers((TomcatConnectorCustomizer) connector -> {
@@ -33,9 +24,6 @@ public class SpringBootWebApplication {
                 ((AbstractHttp11Protocol<?>) connector.getProtocolHandler()).setMaxSwallowSize(-1);
             }
         });
-
         return tomcat;
-
     }
-
 }

@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement(name ="record")
 
 /*
-POJO class for Customer statement model
+ * POJO class for Customer statement model
  */
 public class CustStmtModel {
 
@@ -17,27 +17,28 @@ public class CustStmtModel {
 	@XmlElement(name ="description")
 	private String description;
 	@XmlElement(name ="startBalance")
-	private double startbalance;
+	private double startBalance;
 	@XmlElement(name ="mutation")
 	private double mutation;
 	@XmlElement(name ="endBalance")
-	private double endbalance;
+	private double endBalance;
 
 	private boolean failedRecord;
 
+	public CustStmtModel() { }
 
-	public CustStmtModel() {
-
-	}
-
-
-	public CustStmtModel(Integer refernceNo, String accNumber, String description, double startbalance, double mutation, double endbalance) {
+	public CustStmtModel(Integer refernceNo,
+						 String accNumber,
+						 String description,
+						 double startBalance,
+						 double mutation,
+						 double endBalance) {
 		this.refernceNo = refernceNo;
 		this.accNumber = accNumber;
 		this.description = description;
-		this.startbalance = startbalance;
+		this.startBalance = startBalance;
 		this.mutation = mutation;
-		this.endbalance = endbalance;
+		this.endBalance = endBalance;
 	}
 
 	public boolean isFailedRecord() {
@@ -47,10 +48,6 @@ public class CustStmtModel {
 	public void setFailedRecord(boolean failedRecord) {
 		this.failedRecord = failedRecord;
 	}
-
-
-	
-
 
 	public Integer getRefernceNo() {
 		return refernceNo;
@@ -76,12 +73,12 @@ public class CustStmtModel {
 		this.description = description;
 	}
 
-	public double getStartbalance() {
-		return startbalance;
+	public double getStartBalance() {
+		return startBalance;
 	}
 
-	public void setStartbalance(double startbalance) {
-		this.startbalance = startbalance;
+	public void setStartBalance(double startBalance) {
+		this.startBalance = startBalance;
 	}
 
 	public double getMutation() {
@@ -92,14 +89,12 @@ public class CustStmtModel {
 		this.mutation = mutation;
 	}
 
-	public double getEndbalance() {
-		return endbalance;
+	public double getEndBalance() {
+		return endBalance;
 	}
 
-	public void setEndbalance(double endbalance) {
-		this.endbalance = endbalance;
+	public void setEndBalance(double endBalance) {
+		this.endBalance = endBalance;
 	}
-
-
 
 }

@@ -1,8 +1,5 @@
 package com.rabobank.statement.constants;
 
-/**
- * Created by Ganesh_C01 on 7/13/2018.
- */
 public interface CustStmtConstant {
 
     public static final int COL_REFNO = 0;

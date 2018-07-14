@@ -10,17 +10,14 @@ import java.util.List;
 @XmlRootElement(name ="records")
 
 /*
-POJO class for JAXB binding XML file
+ * POJO class for JAXB binding XML file
  */
 public class CustStmtList {
-
 
     @XmlElement(name ="record")
     private List<CustStmtModel> custStmtModel;
 
-    public CustStmtList() {
-
-    }
+    public CustStmtList() { }
 
     public List<CustStmtModel> getCustStmtModelList() {
         return custStmtModel;

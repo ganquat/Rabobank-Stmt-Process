@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 
 /**
- * Created by Ganesh_C01 on 7/13/2018.
+ * Factory class for selecting the statement process object
  */
 @Component
 public class StmtProcessorFactory {
@@ -19,13 +19,10 @@ public class StmtProcessorFactory {
         @Autowired
         private XMLStmtProcessor xmlStmtProcessor;
 
-        public ICustStmtInterface getStmtProcessor(String extn) {
-
-           if("csv".equalsIgnoreCase(extn)) return csvStmtProcessor;
-            else if ("xml".equalsIgnoreCase(extn)) return xmlStmtProcessor;
+        public ICustStmtInterface getStmtProcessor(String fileExtn) {
+           if("csv".equalsIgnoreCase(fileExtn)) return csvStmtProcessor;
+            else if ("xml".equalsIgnoreCase(fileExtn)) return xmlStmtProcessor;
             return null;
         }
-
-
     }
 

@@ -3,24 +3,19 @@ package com.rabobank.statement.service;
 import com.rabobank.statement.constants.CustStmtConstant;
 import com.rabobank.statement.factory.StmtProcessorFactory;
 import com.rabobank.statement.interfaces.ICustStmtInterface;
-import com.rabobank.statement.model.CustStmtList;
 import com.rabobank.statement.model.CustStmtModel;
 import com.rabobank.statement.processor.XMLStmtProcessor;
 import org.apache.commons.io.FilenameUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Unmarshaller;
 
 import java.util.List;
 
 /**
- * Created by Ganesh_C01 on 7/13/2018.
+ * Service class for processing customer statement
  */
 @Service
 public class CustStmtService implements CustStmtConstant {
@@ -34,10 +29,9 @@ public class CustStmtService implements CustStmtConstant {
     private StmtProcessorFactory stmtProcessorFactory;
 
     /*
-    This method validates the customer statement records and updates the failed record in list
-    @param custStmtModel
-
-     */
+    *   This method validates the customer statement records and updates the failed record in list
+    *   @param custStmtModel
+    * */
     public List<CustStmtModel> validateCustStmt(MultipartFile file) {
         LOGGER.info("Inside customer statement validation method");
 
@@ -48,9 +42,9 @@ public class CustStmtService implements CustStmtConstant {
     }
 
     /*
-    This method calls the corresponding process method through factory method pattern
+     * This method calls the corresponding process method through factory method pattern
      */
-    public List<CustStmtModel> convertFileDataToCustStmtModel(MultipartFile file) {
+    private List<CustStmtModel> convertFileDataToCustStmtModel(MultipartFile file) {
         ICustStmtInterface CustStmtObject = stmtProcessorFactory.getStmtProcessor(
                 FilenameUtils.getExtension(file.getOriginalFilename()));
 
@@ -59,19 +53,19 @@ public class CustStmtService implements CustStmtConstant {
     }
 
     /*
-    This method check for invalid transaction from the list of customer statement model list
+     * This method check for invalid transaction from the list of customer statement model list
      */
-    public List<CustStmtModel> checkForInvalidTransaction(List<CustStmtModel> custStmtModelList){
+    private List<CustStmtModel> checkForInvalidTransaction(List<CustStmtModel> custStmtModelList){
 
         for (CustStmtModel custModel :  custStmtModelList) {
-
             //Calculate and check the end balance value
-            if (Math.round((custModel.getStartbalance() + custModel.getMutation())*ROUND_TWO_DECIMAL)/ROUND_TWO_DECIMAL == custModel.getEndbalance()) {
+            if (Math.round((custModel.getStartBalance() + custModel.getMutation()) *
+                    ROUND_TWO_DECIMAL)/ROUND_TWO_DECIMAL == custModel.getEndBalance()) {
                 // If end balance is correct, loop through all values and check duplicate ref no
                 for (CustStmtModel custModel1 : custStmtModelList) {
                     if ((custModel.getRefernceNo().equals(custModel1.getRefernceNo())
                             && (!custModel.equals(custModel1))))
-                        //duplicate refno
+                        //duplicate reference no
                         custModel.setFailedRecord(true);
                 }
             }
@@ -81,5 +75,4 @@ public class CustStmtService implements CustStmtConstant {
         }
         return custStmtModelList;
     }
-
 }

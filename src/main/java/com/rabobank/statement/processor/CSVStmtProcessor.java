@@ -4,7 +4,6 @@ import com.rabobank.statement.constants.CustStmtConstant;
 import com.rabobank.statement.exception.CustStmtException;
 import com.rabobank.statement.interfaces.ICustStmtInterface;
 import com.rabobank.statement.model.CustStmtModel;
-import com.rabobank.statement.service.CustStmtService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,13 +11,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Ganesh_C01 on 7/13/2018.
+ * CSV statement processor
  */
 @Component
 public class CSVStmtProcessor implements ICustStmtInterface,CustStmtConstant {
@@ -31,13 +29,11 @@ public class CSVStmtProcessor implements ICustStmtInterface,CustStmtConstant {
     @Value("${csv.columnseperator}")
     private String columnseperator;
 
-
     /*
-      This method reads the CSV data from multipart input file and converts it to Customer statement list object
-       and sends the list for validation
-      @param file
-     */
-
+     *  This method reads the CSV data from multipart input file and converts it to Customer statement list
+     *  object and sends the list for validation
+     *  @param file
+    * */
     public List<CustStmtModel> process(MultipartFile file) {
         LOGGER.info("Inside CSV statement processor method");
         CustStmtModel custStmtModel;
@@ -58,15 +54,15 @@ public class CSVStmtProcessor implements ICustStmtInterface,CustStmtConstant {
                 custStmtModel.setRefernceNo(Integer.parseInt(columns[COL_REFNO]));
                 custStmtModel.setAccNumber(columns[COL_ACCTNO]);
                 custStmtModel.setDescription(columns[COL_DESC]);
-                custStmtModel.setStartbalance(Double.parseDouble(columns[COL_STBAL]));
+                custStmtModel.setStartBalance(Double.parseDouble(columns[COL_STBAL]));
                 custStmtModel.setMutation(Double.parseDouble(columns[COL_MUT]));
-                custStmtModel.setEndbalance(Double.parseDouble(columns[COL_EDBAL]));
+                custStmtModel.setEndBalance(Double.parseDouble(columns[COL_EDBAL]));
                 custStmtList.add(custStmtModel);
             }
-
         }
         catch(Exception e) {
-            CustStmtException custStmtException = new CustStmtException("Error reading CSV file:",e);
+            CustStmtException custStmtException = new CustStmtException("Error reading CSV file:", e);
+            LOGGER.error("Exception in CSV process method", e.getMessage());
             throw custStmtException;
         }
         return custStmtList;

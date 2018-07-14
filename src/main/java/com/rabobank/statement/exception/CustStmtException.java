@@ -1,19 +1,19 @@
 package com.rabobank.statement.exception;
 
 /**
- * Created by Ganesh_C01 on 7/13/2018.
+ * Wrapper exception class for customer statement application
  */
 public class CustStmtException extends RuntimeException{
 
-    private String strErrorMessage = "";
+    private String errorMessage = "";
     private Exception originalException;
 
-    public String getStrErrorMessage() {
-        return strErrorMessage;
+    public String getErrorMessage() {
+        return errorMessage;
     }
 
-    public void setStrErrorMessage(String strErrorMessage) {
-        this.strErrorMessage = strErrorMessage;
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
     }
 
     public Exception getOriginalException() {
@@ -24,12 +24,8 @@ public class CustStmtException extends RuntimeException{
         this.originalException = originalException;
     }
 
-    /**
-     * @param strErrorMessage
-     * @param originalException
-     */
-    public CustStmtException(String strErrorMessage, Exception originalException) {
-        this.strErrorMessage = strErrorMessage;
+    public CustStmtException(String errorMessage, Exception originalException) {
+        this.errorMessage = errorMessage;
         this.originalException = originalException;
     }
 }
