@@ -2,6 +2,7 @@ package com.rabobank.statement.validator;
 
 import com.rabobank.statement.constants.CustStmtConstant;
 import com.rabobank.statement.model.CustStmtModel;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
 /*
  * Checks for invalid transaction from the list of customer statement model list
  */
+@Component
 public class CustStmtValidator implements CustStmtConstant {
 
     public List<CustStmtModel> checkForInvalidTransaction(List<CustStmtModel> custStmtModelList){
