@@ -62,3 +62,18 @@
 14-07-2018 12:41:17.829 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
 14-07-2018 12:41:17.911 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
 14-07-2018 12:41:17.931 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Exception in XML process method
+16-07-2018 11:25:26.133 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
+16-07-2018 11:25:26.149 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
+16-07-2018 11:25:26.149 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
+16-07-2018 11:25:26.164 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
+16-07-2018 11:25:26.586 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
+16-07-2018 11:25:26.618 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Exception in XML process method
+16-07-2018 11:25:50.636 [main] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication v1.0 on CHNMCT201922L with PID 8928 (C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process\target\Rabobank-Stmt-Process-1.0.jar started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
+16-07-2018 11:25:50.714 [main] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+16-07-2018 11:25:50.714 [main] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+16-07-2018 11:25:55.720 [main] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 5.899 seconds (JVM running for 6.69)
+16-07-2018 11:25:58.178 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
+16-07-2018 11:26:02.959 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
+16-07-2018 11:26:02.959 [http-nio-8080-exec-2] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
+16-07-2018 11:26:02.961 [http-nio-8080-exec-2] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
+16-07-2018 11:26:03.015 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
