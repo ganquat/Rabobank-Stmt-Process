@@ -16,7 +16,8 @@ public class StmtProcessorFactory {
 
         private CSVStmtProcessor csvStmtProcessor;
         private XMLStmtProcessor xmlStmtProcessor;
-
+		
+		@Autowired(required=true)
         public StmtProcessorFactory(CSVStmtProcessor csvStmtProcessor,
                                     XMLStmtProcessor xmlStmtProcessor){
             this.csvStmtProcessor = csvStmtProcessor;
