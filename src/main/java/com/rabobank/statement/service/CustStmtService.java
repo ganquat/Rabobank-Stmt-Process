@@ -22,14 +22,17 @@ public class CustStmtService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CustStmtService.class);
 
-    @Autowired
-    private XMLStmtProcessor custStmtProcessor;
-
-    @Autowired
     private StmtProcessorFactory stmtProcessorFactory;
-
-    @Autowired
     private CustStmtValidator custStmtValidator;
+
+    @Autowired(required=true)
+    public CustStmtService (StmtProcessorFactory stmtProcessorFactory,
+                            CustStmtValidator custStmtValidator) {
+
+        this.stmtProcessorFactory = stmtProcessorFactory;
+        this.custStmtValidator = custStmtValidator;
+    }
+
 
     /*
     *   This method validates the customer statement records and updates the failed record in list

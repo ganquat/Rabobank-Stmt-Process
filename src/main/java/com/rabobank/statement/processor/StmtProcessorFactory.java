@@ -13,11 +13,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class StmtProcessorFactory {
 
-        @Autowired
-        private CSVStmtProcessor csvStmtProcessor;
 
-        @Autowired
+        private CSVStmtProcessor csvStmtProcessor;
         private XMLStmtProcessor xmlStmtProcessor;
+
+        public StmtProcessorFactory(CSVStmtProcessor csvStmtProcessor,
+                                    XMLStmtProcessor xmlStmtProcessor){
+            this.csvStmtProcessor = csvStmtProcessor;
+            this.xmlStmtProcessor = xmlStmtProcessor;
+        }
 
         public ICustStmtInterface getStmtProcessor(String fileExtn) {
            if("csv".equalsIgnoreCase(fileExtn)) return csvStmtProcessor;

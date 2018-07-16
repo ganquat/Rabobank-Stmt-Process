@@ -10,15 +10,15 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(MultipartException.class)
-    public String handleError1(MultipartException e, RedirectAttributes redirectAttributes) {
+    public String MultiPartErrorhandler(MultipartException e, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("message", e.getCause().getMessage());
         return "redirect:/uploadStatus";
 
     }
 
     @ExceptionHandler(CustStmtException.class)
-    public String handleError2(CustStmtException e, RedirectAttributes redirectAttributes) {
-        redirectAttributes.addFlashAttribute("message", e.getErrorMessage() + e.getOriginalException().getMessage());
+    public String CustStmtExceptionhandler(CustStmtException e, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("message", e.getMessage() + e.getCause().toString());
         return "redirect:/uploadStatus";
 
     }

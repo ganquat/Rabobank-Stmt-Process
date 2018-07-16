@@ -22,6 +22,9 @@ public class XMLStmtProcessor implements CustStmtConstant,ICustStmtInterface {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(XMLStmtProcessor.class);
 
+    public XMLStmtProcessor(){
+
+    }
     /*
     * This method reads the xml data from multipart input file and unmarshalls it to Customer statement list object
     * and sends the list for validation
@@ -37,7 +40,7 @@ public class XMLStmtProcessor implements CustStmtConstant,ICustStmtInterface {
             custStmtModel = custStmtList.getCustStmtModelList();
         } catch (Exception e) {
             CustStmtException custStmtException = new CustStmtException("Error reading XML file:", e);
-            LOGGER.info("Exception in XML process method", e.getMessage());
+            LOGGER.info("Exception in XML process method : {}", e.getMessage());
             throw custStmtException;
         }
         return custStmtModel;

@@ -53,6 +53,7 @@ public class CustStmtValidatorTest {
         List<CustStmtModel> duplicateData = new ArrayList<CustStmtModel>();
         duplicateData.add(new CustStmtModel(112806, "NL69ABNA0433647324", "Clothes for Richard de Vries", 90.83, -10.91, 79.92));
         duplicateData.add(new CustStmtModel(112806, "NL69ABNA0433647324", "Clothes for Richard de Vries", 90.83, -10.91, 79.92));
+
         return duplicateData;
     }
 

@@ -21,12 +21,8 @@ public class CSVStmtProcessorTest {
 
     MockMultipartFile file;
 
-    @Mock
-    private String lineseperator;
-    @Mock
-    private String columnseperator;
     @InjectMocks
-    CSVStmtProcessor csvStmtProcessor = new CSVStmtProcessor();
+    CSVStmtProcessor csvStmtProcessor = new CSVStmtProcessor(",");
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -35,8 +31,6 @@ public class CSVStmtProcessorTest {
 
     @Before
     public void setup() {
-        ReflectionTestUtils.setField(csvStmtProcessor, "lineseperator", "\\n");
-        ReflectionTestUtils.setField(csvStmtProcessor, "columnseperator", ",");
         validFile = ClassLoader.getSystemResourceAsStream("records.csv");
         inValidFile = ClassLoader.getSystemResourceAsStream("invalid.csv");
     }
