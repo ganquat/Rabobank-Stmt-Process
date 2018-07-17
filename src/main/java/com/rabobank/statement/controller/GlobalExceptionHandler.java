@@ -1,6 +1,6 @@
 package com.rabobank.statement.controller;
 
-import com.rabobank.statement.exception.CustStmtException;
+import com.rabobank.statement.exception.CustomerStatementException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.multipart.MultipartException;
@@ -16,8 +16,8 @@ public class GlobalExceptionHandler {
 
     }
 
-    @ExceptionHandler(CustStmtException.class)
-    public String CustStmtExceptionhandler(CustStmtException e, RedirectAttributes redirectAttributes) {
+    @ExceptionHandler(CustomerStatementException.class)
+    public String CustStmtExceptionhandler(CustomerStatementException e, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("message", e.getMessage() + e.getCause().toString());
         return "redirect:/uploadStatus";
 

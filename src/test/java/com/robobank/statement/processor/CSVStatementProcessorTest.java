@@ -1,8 +1,8 @@
 package com.robobank.statement.processor;
 
-import com.rabobank.statement.exception.CustStmtException;
-import com.rabobank.statement.model.CustStmtModel;
-import com.rabobank.statement.processor.XMLStmtProcessor;
+import com.rabobank.statement.exception.CustomerStatementException;
+import com.rabobank.statement.model.CustomerStatementModel;
+import com.rabobank.statement.processor.CSVStatementProcessor;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -15,13 +15,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-public class XMLStmtProcessorTest {
+public class CSVStatementProcessorTest {
 
     MockMultipartFile file;
 
     @InjectMocks
-    XMLStmtProcessor xmlStmtProcessor = new XMLStmtProcessor();
-
+    CSVStatementProcessor csvStatementProcessor = new CSVStatementProcessor(",");
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
@@ -30,22 +29,22 @@ public class XMLStmtProcessorTest {
 
     @Before
     public void setup() {
-        validFile = ClassLoader.getSystemResourceAsStream("records.xml");
-        inValidFile = ClassLoader.getSystemResourceAsStream("invalid.xml");
+        validFile = ClassLoader.getSystemResourceAsStream("records.csv");
+        inValidFile = ClassLoader.getSystemResourceAsStream("invalid.csv");
     }
 
     @Test
     public void processValidTest() throws IOException {
         file = new MockMultipartFile("file", "records.csv", "multipart/form-data", validFile);
-        List<CustStmtModel> xmlRecords = xmlStmtProcessor.process(file);
-        Assert.assertNotNull(xmlRecords);
-        Assert.assertEquals(11, xmlRecords.size());
+        List<CustomerStatementModel> csvRecords = csvStatementProcessor.process(file);
+        Assert.assertNotNull(csvRecords);
+        Assert.assertEquals(10, csvRecords.size());
     }
 
     @Test
-    public void processInvalidTest() throws IOException{
-        thrown.expect(CustStmtException.class);
+    public void processInvalidTest() throws IOException {
+        thrown.expect(CustomerStatementException.class);
         file = new MockMultipartFile("file", "invalid.csv", "multipart/form-data", inValidFile);
-        List<CustStmtModel> xmlRecords = xmlStmtProcessor.process(file);
+        List<CustomerStatementModel> csvRecords = csvStatementProcessor.process(file);
     }
 }

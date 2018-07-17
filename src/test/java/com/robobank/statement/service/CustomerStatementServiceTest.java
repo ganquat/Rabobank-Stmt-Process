@@ -1,12 +1,12 @@
 package com.robobank.statement.service;
 
-import com.rabobank.statement.exception.CustStmtException;
-import com.rabobank.statement.model.CustStmtModel;
-import com.rabobank.statement.processor.CSVStmtProcessor;
-import com.rabobank.statement.processor.StmtProcessorFactory;
-import com.rabobank.statement.processor.XMLStmtProcessor;
-import com.rabobank.statement.service.CustStmtService;
-import com.rabobank.statement.validator.CustStmtValidator;
+import com.rabobank.statement.exception.CustomerStatementException;
+import com.rabobank.statement.model.CustomerStatementModel;
+import com.rabobank.statement.processor.CSVStatementProcessor;
+import com.rabobank.statement.processor.StatementProcessorFactory;
+import com.rabobank.statement.processor.XMLStatementProcessor;
+import com.rabobank.statement.service.CustomerStatementService;
+import com.rabobank.statement.validator.CustomerStatementValidator;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * Created by Ganesh_C01 on 7/16/2018.
  */
-public class CustStmtServiceTest {
+public class CustomerStatementServiceTest {
 
     MockMultipartFile file;
 
@@ -31,27 +31,27 @@ public class CustStmtServiceTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Mock
-    XMLStmtProcessor xmlStmtProcessor = new XMLStmtProcessor();
+    XMLStatementProcessor xmlStatementProcessor = new XMLStatementProcessor();
 
     @Mock
-    CSVStmtProcessor csvStmtProcessor = new CSVStmtProcessor(",");
+    CSVStatementProcessor csvStatementProcessor = new CSVStatementProcessor(",");
 
     @InjectMocks
-    StmtProcessorFactory stmtProcessorFactory;
+    StatementProcessorFactory statementProcessorFactory;
 
     @Mock
-    CustStmtValidator custStmtValidator = new CustStmtValidator();
+    CustomerStatementValidator customerStatementValidator = new CustomerStatementValidator();
 
     @InjectMocks
-    CustStmtService custStmtService;
+    CustomerStatementService customerStatementService;
 
     InputStream validFile;
     InputStream inValidFile;
 
     @Before
     public void setup(){
-         stmtProcessorFactory = new StmtProcessorFactory(csvStmtProcessor,xmlStmtProcessor);
-        custStmtService = new CustStmtService(stmtProcessorFactory,custStmtValidator);
+         statementProcessorFactory = new StatementProcessorFactory(csvStatementProcessor, xmlStatementProcessor);
+        customerStatementService = new CustomerStatementService(statementProcessorFactory, customerStatementValidator);
         validFile = ClassLoader.getSystemResourceAsStream("records.xml");
         inValidFile = ClassLoader.getSystemResourceAsStream("invalid.xml");
 
@@ -60,7 +60,7 @@ public class CustStmtServiceTest {
     @Test
     public void validateCustStmtWithValidDataTest() throws IOException {
         file = new MockMultipartFile("file", "records.xml", "multipart/form-data", validFile);
-        List<CustStmtModel> records = custStmtService.validateCustStmt(file);
+        List<CustomerStatementModel> records = customerStatementService.validateCustStmt(file);
         Assert.assertNotNull(records);
         Assert.assertEquals(false,records.get(0).isFailedRecord());
         Assert.assertEquals(true,records.get(1).isFailedRecord());
@@ -68,8 +68,8 @@ public class CustStmtServiceTest {
 
     @Test
     public void validateCustStmtWithInValidDataTest() throws IOException{
-        thrown.expect(CustStmtException.class);
+        thrown.expect(CustomerStatementException.class);
         file = new MockMultipartFile("file", "invalid.xml", "multipart/form-data", inValidFile);
-        List<CustStmtModel> Records = custStmtService.validateCustStmt(file);
+        List<CustomerStatementModel> Records = customerStatementService.validateCustStmt(file);
     }
 }

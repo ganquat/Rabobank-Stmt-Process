@@ -15,10 +15,10 @@
         <th>Reference No</th>
         <th>Description</th>
     </tr>
-    <tr th:each="custStmt: ${session.custStmtList}">
-       <div th:if="${custStmt.failedRecord}">
-        <td th:text="${custStmt.refernceNo}"></td>
-        <td th:text="${custStmt.description}"></td>
+    <tr th:each="customerStatementList: ${session.customerStatementList}">
+       <div th:if="${customerStatementList.failedRecord}">
+        <td th:text="${customerStatementList.refernceNo}"></td>
+        <td th:text="${customerStatementList.description}"></td>
        </div>
     </tr>
 </table>

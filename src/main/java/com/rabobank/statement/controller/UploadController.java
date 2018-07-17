@@ -1,6 +1,6 @@
 package com.rabobank.statement.controller;
 
-import com.rabobank.statement.service.CustStmtService;
+import com.rabobank.statement.service.CustomerStatementService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,12 @@ public class UploadController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UploadController.class);
 
-    @Autowired
-    private CustStmtService custStmtService;
+    private CustomerStatementService customerStatementService;
+
+    @Autowired(required=true)
+    public UploadController(CustomerStatementService customerStatementService){
+        this.customerStatementService = customerStatementService;
+    }
 
     @GetMapping("/")
     public String index() {
@@ -41,7 +45,7 @@ public class UploadController {
 
         if( file.getOriginalFilename().endsWith("csv") ||
                 file.getOriginalFilename().endsWith("xml")) {
-            session.setAttribute("custStmtList",custStmtService.validateCustStmt(file));
+            session.setAttribute("customerStatementList", customerStatementService.validateCustStmt(file));
         }
         else {
             LOGGER.error("Invalid file type uploaded");

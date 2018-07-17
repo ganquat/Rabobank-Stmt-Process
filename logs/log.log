@@ -1,79 +1,29 @@
-14-07-2018 08:42:32.518 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 3192 (C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process\target\classes started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process)
-14-07-2018 08:42:32.523 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
-14-07-2018 08:42:32.523 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
-14-07-2018 08:42:37.257 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 5.532 seconds (JVM running for 6.682)
-14-07-2018 08:42:41.679 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
-14-07-2018 08:42:48.412 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-14-07-2018 08:42:48.413 [http-nio-8080-exec-2] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-14-07-2018 08:42:48.416 [http-nio-8080-exec-2] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 08:42:48.485 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
-14-07-2018 10:31:51.941 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 1552 (C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process\target\classes started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process)
-14-07-2018 10:31:51.946 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
-14-07-2018 10:31:51.947 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
-14-07-2018 10:31:59.123 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 8.074 seconds (JVM running for 10.45)
-14-07-2018 10:31:59.391 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
-14-07-2018 10:32:11.799 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-14-07-2018 10:38:55.228 [http-nio-8080-exec-3] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-14-07-2018 10:38:55.286 [http-nio-8080-exec-3] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 10:38:55.356 [http-nio-8080-exec-5] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
-14-07-2018 10:50:29.026 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 10:50:55.192 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 10:51:06.725 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:02:21.747 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:04:21.893 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:05:21.641 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:05:29.750 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:05:30.705 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:05:42.839 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:06:13.395 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:06:18.710 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:09:45.673 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:26:08.111 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:26:08.123 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:26:18.341 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:26:18.361 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:26:18.361 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:33:15.608 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 11:34:14.162 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 11:35:53.913 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 11:35:54.030 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 11:35:54.079 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Exception in XML process method
-14-07-2018 11:59:18.618 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 13592 (C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process\target\classes started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\Rabobank-Stmt-Process)
-14-07-2018 11:59:18.659 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
-14-07-2018 11:59:18.660 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
-14-07-2018 11:59:24.240 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 6.684 seconds (JVM running for 7.619)
-14-07-2018 11:59:31.571 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
-14-07-2018 11:59:37.826 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-14-07-2018 11:59:37.827 [http-nio-8080-exec-2] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-14-07-2018 11:59:37.829 [http-nio-8080-exec-2] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 11:59:37.888 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
-14-07-2018 11:59:43.235 [http-nio-8080-exec-4] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-14-07-2018 11:59:43.236 [http-nio-8080-exec-4] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-14-07-2018 11:59:43.237 [http-nio-8080-exec-4] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:59:43.249 [http-nio-8080-exec-5] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
-14-07-2018 11:59:48.739 [http-nio-8080-exec-6] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-14-07-2018 11:59:48.741 [http-nio-8080-exec-6] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-14-07-2018 11:59:48.742 [http-nio-8080-exec-6] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 11:59:48.743 [http-nio-8080-exec-6] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 11:59:48.823 [http-nio-8080-exec-7] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
-14-07-2018 12:41:17.813 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 12:41:17.822 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-14-07-2018 12:41:17.823 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-14-07-2018 12:41:17.829 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 12:41:17.911 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-14-07-2018 12:41:17.931 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Exception in XML process method
-16-07-2018 11:25:26.133 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-16-07-2018 11:25:26.149 [main] INFO  c.r.s.processor.CSVStmtProcessor.process - Inside CSV statement processor method
-16-07-2018 11:25:26.149 [main] ERROR c.r.s.processor.CSVStmtProcessor.process - Exception in CSV process method
-16-07-2018 11:25:26.164 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-16-07-2018 11:25:26.586 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-16-07-2018 11:25:26.618 [main] INFO  c.r.s.processor.XMLStmtProcessor.process - Exception in XML process method
-16-07-2018 11:25:50.636 [main] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication v1.0 on CHNMCT201922L with PID 8928 (C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process\target\Rabobank-Stmt-Process-1.0.jar started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
-16-07-2018 11:25:50.714 [main] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
-16-07-2018 11:25:50.714 [main] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
-16-07-2018 11:25:55.720 [main] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 5.899 seconds (JVM running for 6.69)
-16-07-2018 11:25:58.178 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
-16-07-2018 11:26:02.959 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
-16-07-2018 11:26:02.959 [http-nio-8080-exec-2] INFO  c.r.s.service.CustStmtService.validateCustStmt - Inside customer statement validation method
-16-07-2018 11:26:02.961 [http-nio-8080-exec-2] INFO  c.r.s.processor.XMLStmtProcessor.process - Inside XML statement processor method
-16-07-2018 11:26:03.015 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
+17-07-2018 14:18:33.045 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 7900 (started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
+17-07-2018 14:18:33.052 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+17-07-2018 14:18:33.052 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-07-2018 14:18:39.780 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 7.747 seconds (JVM running for 9.217)
+17-07-2018 14:18:39.997 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
+17-07-2018 14:18:47.657 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
+17-07-2018 14:18:47.657 [http-nio-8080-exec-2] INFO  c.r.s.s.CustomerStatementService.validateCustStmt - Inside customer statement validation method
+17-07-2018 14:18:47.660 [http-nio-8080-exec-2] INFO  c.r.s.p.CSVStatementProcessor.process - Inside CSV statement processor method
+17-07-2018 14:19:37.686 [http-nio-8080-exec-4] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
+17-07-2018 14:21:16.441 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 7900 (started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
+17-07-2018 14:21:16.442 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+17-07-2018 14:21:16.442 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-07-2018 14:21:17.824 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 2536 (started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
+17-07-2018 14:21:17.828 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+17-07-2018 14:21:17.829 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-07-2018 14:21:20.574 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 4.269 seconds (JVM running for 170.01)
+17-07-2018 14:21:57.080 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarting - Starting SpringBootWebApplication on CHNMCT201922L with PID 2712 (started by Ganesh_C01 in C:\Users\ganesh_c01\Desktop\Assignment\New folder\Rabobank-Stmt-Process)
+17-07-2018 14:21:57.086 [restartedMain] DEBUG c.r.s.SpringBootWebApplication.logStarting - Running with Spring Boot v1.4.3.RELEASE, Spring v4.3.5.RELEASE
+17-07-2018 14:21:57.086 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-07-2018 14:22:02.075 [restartedMain] INFO  c.r.s.SpringBootWebApplication.logStarted - Started SpringBootWebApplication in 5.825 seconds (JVM running for 6.782)
+17-07-2018 14:22:02.389 [http-nio-8080-exec-1] INFO  c.r.s.controller.UploadController.index - Inside the index method - redirecting to upload html
+17-07-2018 14:22:06.598 [http-nio-8080-exec-2] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
+17-07-2018 14:22:06.598 [http-nio-8080-exec-2] INFO  c.r.s.s.CustomerStatementService.validateCustStmt - Inside customer statement validation method
+17-07-2018 14:22:06.601 [http-nio-8080-exec-2] INFO  c.r.s.p.XMLStatementProcessor.process - Inside XML statement processor method
+17-07-2018 14:22:06.671 [http-nio-8080-exec-3] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
+17-07-2018 14:22:11.835 [http-nio-8080-exec-4] INFO  c.r.s.controller.UploadController.custStmtUpload - Inside the statement upload method
+17-07-2018 14:22:11.836 [http-nio-8080-exec-4] INFO  c.r.s.s.CustomerStatementService.validateCustStmt - Inside customer statement validation method
+17-07-2018 14:22:11.836 [http-nio-8080-exec-4] INFO  c.r.s.p.CSVStatementProcessor.process - Inside CSV statement processor method
+17-07-2018 14:22:11.851 [http-nio-8080-exec-5] INFO  c.r.s.controller.UploadController.uploadStatus - Inside the statement upload status method
