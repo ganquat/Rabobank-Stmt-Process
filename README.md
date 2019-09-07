@@ -11,6 +11,11 @@ This project built using Intellij IDEA ide and Maven dependency management. The 
 command line using maven command. The application uses inbuilt spring boot tomcat server can be accessed using the url http://localhost:8080
 
 
+
+
+
+
+
 ## Run using Intellij IDEA ##
 
 Import the project in Intellij IDEA ide. Goto Source directory -> Right click SpringBootWebApplication class file and run it.
