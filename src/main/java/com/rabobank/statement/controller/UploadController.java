@@ -44,7 +44,9 @@ public class UploadController {
         }
 
         if( file.getOriginalFilename().endsWith("csv") ||
-                file.getOriginalFilename().endsWith("xml")) {
+                file.getOriginalFilename().endsWith("xml") ||
+                file.getOriginalFilename().endsWith("yaml") ||
+                file.getOriginalFilename().endsWith("yml")) {
             session.setAttribute("customerStatementList", customerStatementService.validateCustStmt(file));
         }
         else {

@@ -1,0 +1,30 @@
+- refernceNo: 194261
+  accNumber: NL91RABO0315273637
+  description: "Clothes from Jan Bakker"
+  startBalance: 21.6
+  mutation: -41.83
+  endBalance: -10.23
+- refernceNo: 112806
+  accNumber: NL27SNSB0917829871
+  description: "Clothes for Willem Dekker"
+  startBalance: 91.23
+  mutation: 15.57 # Note: leading '+' is optional in YAML for positive numbers
+  endBalance: 106.8
+- refernceNo: 183049
+  accNumber: NL69ABNA0433647324
+  description: "Clothes for Jan King"
+  startBalance: 86.66
+  mutation: 44.5
+  endBalance: 131.16
+- refernceNo: 183356 # Duplicate reference for testing duplicate handling later if necessary
+  accNumber: NL74ABNA0248990274
+  description: "Subscription for Peter de Vries"
+  startBalance: 92.98
+  mutation: -46.65
+  endBalance: 46.33
+- refernceNo: 112806 # Duplicate reference
+  accNumber: NL69ABNA0433647324
+  description: "Clothes for Richard de Vries"
+  startBalance: 90.83
+  mutation: -10.91
+  endBalance: 79.92
