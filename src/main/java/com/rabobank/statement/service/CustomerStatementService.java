@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Service class for processing customer statement
@@ -23,6 +25,7 @@ public class CustomerStatementService {
 
     private StatementProcessorFactory statementProcessorFactory;
     private CustomerStatementValidator customerStatementValidator;
+    private Set<Integer> processedReferenceCache = new HashSet<>();
 
     @Autowired(required=true)
     public CustomerStatementService(StatementProcessorFactory statementProcessorFactory,
@@ -41,7 +44,13 @@ public class CustomerStatementService {
         LOGGER.info("Inside customer statement validation method");
 
         List<CustomerStatementModel> customerStatementModelList = convertFileDataToCustStmtModel(file);
-        List<CustomerStatementModel> validatedStmtModelList = customerStatementValidator.checkForInvalidTransaction(customerStatementModelList);
+        List<CustomerStatementModel> validatedStmtModelList = customerStatementValidator.checkForInvalidTransaction(customerStatementModelList, processedReferenceCache);
+
+        for (CustomerStatementModel stmtModel : validatedStmtModelList) {
+            if (!stmtModel.isFailedRecord() && stmtModel.getRefernceNo() != null) {
+                processedReferenceCache.add(stmtModel.getRefernceNo());
+            }
+        }
 
         return validatedStmtModelList;
     }
